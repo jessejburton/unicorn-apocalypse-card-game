@@ -1,4 +1,5 @@
 import database from '../firebase/firebase';
+import moment from 'moment';
 
 // ADD_USER
 export const addUser = (user) => ({
@@ -9,12 +10,13 @@ export const addUser = (user) => ({
 export const startAddUser = (userData = {}) => {
   return (dispatch, getState) => {
     const uid = getState().auth.uid;
+
     const {
       displayName = '',
       email = '',
       photoURL = ''
     } = userData;
-    const user = { displayName, email, photoURL, isOnline: true };
+    const user = { displayName, email, photoURL, isOnline: true, lastSeen: moment().toString() };
 
     return database
       .ref(`users/${uid}/`)

@@ -1,5 +1,6 @@
 import React from 'react';
 import { connect } from 'react-redux';
+import moment from 'moment';
 
 export const UserList = (props) => {
 
@@ -8,7 +9,7 @@ export const UserList = (props) => {
     <div>
       <h2>Players</h2>
       {props.users.map((user) => {
-        return <p key={user.id}>{user.displayName}</p>;
+        return <p key={user.id}>{user.displayName} - {moment(user.lastSeen).format("MMM Do, YYYY @ hh:mma")}</p>;
       })};
     </div>)
 };
