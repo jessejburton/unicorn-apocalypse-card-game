@@ -1,5 +1,4 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
 import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';
 import { startLogout } from '../actions/auth';
@@ -9,7 +8,7 @@ export const Header = ({ startLogout }) => (
     <div className="content-container">
       <div className="header__content">
         <Link className="header__title" to="/" exact={true}>
-          <h1>Boilerplate</h1>
+          <h1>Unicorn Apocalypse</h1>
         </Link>
         <button className="button button--link" onClick={startLogout}>
           Logout
