@@ -1,12 +1,12 @@
-import { firebase, googleAuthProvider } from '../firebase/firebase';
+import database, { firebase, googleAuthProvider } from '../firebase/firebase';
 
-export const login = (uid) => ({
+export const login = (user) => ({
   type: 'LOGIN',
-  uid
+  user
 });
 
 export const startLogin = () => {
-  return (dispatch) => {
+  return () => {
     return firebase.auth().signInWithPopup(googleAuthProvider);
   };
 };
@@ -16,7 +16,14 @@ export const logout = () => ({
 });
 
 export const startLogout = () => {
-  return () => {
-    return firebase.auth().signOut();
+  return (dispatch, getState) => {
+    const uid = getState().auth.uid;
+
+    return database
+      .ref(`users/${uid}`)
+      .update({ isOnline: false })
+      .then((ref) => {
+        return Promise.resolve(firebase.auth().signOut());
+      });
   };
 };
