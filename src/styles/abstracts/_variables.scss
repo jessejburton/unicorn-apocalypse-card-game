@@ -12,6 +12,8 @@ $color-important: #963F3C;
 $color-default: $color-primary;
 $color-question: #565723;
 $color-todo: $color-secondary-font;
+$color-online: #d0ff8a;
+$color-offline: #ffe28a;
 
 // Font
 $font-logo: 'Oleo Script', cursive;
@@ -28,4 +30,4 @@ $xl-size: 4.2rem;
 $desktop: 45rem;
 $touch-size: 5rem;
 
-$rounded: 0rem;
+$rounded: .5rem;

@@ -1,0 +1,57 @@
+.player {
+  background-color: darken($color-white, 3%);
+  border: 1px solid darken($color-white, 15%);
+  border-radius: $rounded;
+  padding: .3rem;
+  width: 100%;
+  display: grid;
+  grid-template-columns: 6rem auto;
+  position: relative;
+  margin-bottom: .3rem;
+  box-shadow: inset -2px -2px 2px rgba(darken($color-white, 20%),.4);
+
+}
+
+.player__photo {
+  width: 5rem;
+  height: 5rem;
+}
+
+.player__photo-container {
+  width: $touch-size;
+  height: $touch-size;
+  overflow: hidden;
+  border-radius: $rounded;
+
+  img {
+    width: 100%;
+  }
+}
+
+.player__status {
+  font-size: $s-size;
+  color: lighten($color-font, 10%);
+  font-style: italic;
+}
+
+.player__status-icon {
+  position: absolute;
+  display: block;
+  top: .3rem;
+  right: .3rem;
+  width: 1rem;
+  height: 1rem;
+  border-radius: 50%;
+}
+
+.online {
+  background-color: $color-online;
+  border: 1px solid darken($color-online, 20%);
+  box-shadow: inset -2px -2px 2px rgba(darken($color-online, 20%),.4);
+}
+
+.offline {
+  background-color: $color-offline;
+  border: 1px solid darken($color-offline, 20%);
+  box-shadow: inset -2px -2px 2px rgba(darken($color-offline, 20%),.4);
+}

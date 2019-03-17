@@ -1,6 +1,6 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import moment from 'moment';
+import PlayerListItem from './PlayerListItem';
 
 export const PlayerList = (props) => {
 
@@ -10,13 +10,7 @@ export const PlayerList = (props) => {
       <h2>Players</h2>
       {props.players.map((player) => {
         return (
-          <div className="player" key={player.id}>
-            <div className="player__name">{player.displayName}</div>
-            <div className="player__status">
-              {player.isOnline ? 'online' : 'offline'}
-              last seen {moment(player.lastSeen).format("MMM Do, YYYY @ hh:mma")}
-            </div>
-          </div>
+          <PlayerListItem key={player.id} player={player} />
         )
       })}
     </div>)
