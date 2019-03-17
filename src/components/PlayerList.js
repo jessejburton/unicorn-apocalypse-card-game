@@ -7,7 +7,6 @@ export const PlayerList = (props) => {
   console.log(props);
   return (
     <div>
-      <h2>Players</h2>
       {props.players.map((player) => {
         return (
           <PlayerListItem key={player.id} player={player} />

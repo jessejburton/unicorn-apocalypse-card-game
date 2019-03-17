@@ -1,0 +1,17 @@
+.button {
+  width: 100%;
+  cursor: pointer;
+  line-height: $touch-size;
+}
+
+.button--dark {
+  background-color: transparent;
+  border: 2px solid $color-white;
+  color: $color-white;
+  transition: all .3s ease;
+
+  &:hover {
+    background-color: $color-white;
+    color: $color-primary;
+  }
+}

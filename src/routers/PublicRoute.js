@@ -10,7 +10,11 @@ export const PublicRoute = ({
     <Route
       {...rest}
       component={(props) =>
-        !isAuthenticated ? <Component {...props} /> : <Redirect to="/menu" />
+        !isAuthenticated ? (
+          <div className="unauthenticated">
+            <Component {...props} />
+          </div>
+        ) : <Redirect to="/menu" />
       }
     />
   );
