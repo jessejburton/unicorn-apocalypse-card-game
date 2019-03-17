@@ -1,10 +1,10 @@
 import React from 'react';
-import UserList from './UserList';
+import PlayerList from './PlayerList';
 
 const MainMenuPage = (props) => (
   <div>
     <h1>Main Menu</h1>
-    <UserList />
+    <PlayerList />
   </div>
 );
 

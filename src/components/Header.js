@@ -11,13 +11,9 @@ export const Header = (props) => {
     <header className="header">
       <div className="content-container">
         <div className="header__content">
-          <Link className="header__title" to="/">
-            <h1>Unicorn Apocalypse</h1>
-          </Link>
-          <h2>Welcome, {user.displayName}</h2>
-          <button className="button button--link" onClick={props.startLogout}>
-            Logout
-        </button>
+          <div className="header__logo">
+            <h1 className="header__logo-text">Unicorn Apocalypse</h1>
+          </div>
         </div>
       </div>
     </header>)

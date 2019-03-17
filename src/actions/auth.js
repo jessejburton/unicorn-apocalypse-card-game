@@ -20,7 +20,7 @@ export const startLogout = () => {
     const uid = getState().auth.uid;
 
     return database
-      .ref(`users/${uid}`)
+      .ref(`players/${uid}`)
       .update({ isOnline: false })
       .then((ref) => {
         return Promise.resolve(firebase.auth().signOut());

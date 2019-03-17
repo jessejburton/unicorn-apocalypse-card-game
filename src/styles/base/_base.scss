@@ -9,7 +9,7 @@ html {
 body {
   background-color: $color-white;
   color: $color-font;
-  font-family: $font-opensans;
+  font-family: $font-body;
   font-size: $m-size;
   line-height: 1.6;
   overflow-x: hidden;
@@ -26,29 +26,7 @@ button {
 .is-active {
   font-weight: bold;
 }
-* {
-  box-sizing: border-box;
-}
 
-html {
-  font-size: 62.5%;
-}
-
-body {
-  color: $dark-grey;
-  font-family: Helvetica, Arial, sans-serif;
-  font-size: $m-size;
-  line-height: 1.6;
-}
-
-button {
-  cursor: pointer;
-
-  &:disabled {
-    cursor: default;
-  }
-}
-
-.is-active {
-  font-weight: bold;
+.logo-font {
+  font-family: $font-logo;
 }
