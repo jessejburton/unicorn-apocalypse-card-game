@@ -1,7 +1,6 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';
-import { startLogout } from '../actions/auth';
+import { startLogout } from '../../actions/auth';
 
 export class Navigation extends React.Component {
 
@@ -31,10 +30,10 @@ export class Navigation extends React.Component {
           <div className="navigation__menu-content">
             <div className="navigation__profile">
               <div className="navigation__profile-image">
-                <img src={this.props.auth.user.photoURL} />
+                <img src={this.props.user.photoURL} />
               </div>
               <div className="navigation__profile-name logo-font">
-                {this.props.auth.user.displayName}
+                {this.props.user.displayName}
               </div>
             </div>
             <ul className="navigation__items">
@@ -50,7 +49,7 @@ export class Navigation extends React.Component {
 
 const mapStateToProps = (state) => {
   return {
-    auth: state.auth,
+    user: state.auth,
     players: state.players
   };
 };

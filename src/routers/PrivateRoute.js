@@ -1,9 +1,9 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import { Route, Redirect } from 'react-router-dom';
-import Header from '../components/Header';
-import Navigation from '../components/Navigation';
-import Footer from '../components/Footer';
+import Header from '../components/layout/Header';
+import Navigation from '../components/ui/Navigation';
+import Footer from '../components/layout/Footer';
 
 export const PrivateRoute = ({
   isAuthenticated,

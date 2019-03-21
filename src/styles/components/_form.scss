@@ -1,0 +1,50 @@
+.form {
+  padding: .5rem;
+
+  h3 {
+    margin: 1rem 0;
+    font-family: $font-logo;
+    text-align: center;
+    color: $color-secondary;
+  }
+}
+
+.input-text {
+  width: 100%;
+  padding: 0 .5rem;
+  line-height: $touch-size;
+  background-color: transparent;
+  color: $color-white;
+  border: none;
+  border-bottom: 1px solid $color-white;
+  outline: none;
+  transition: all .3s ease;
+  text-align: center;
+
+  &:focus {
+    border-width: 2px;
+  }
+}
+
+.input-field, .input-group, .button-group {
+  padding: 1rem 0;
+}
+
+.input-checkbox {
+  width: 100%;
+  line-height: $touch-size;
+}
+
+.label-check input[type=checkbox]{
+  display: none;
+}
+
+.label-check input[type=checkbox]:checked + label {
+  background-color: $color-white;
+  color: $color-primary;
+}
+
+.label-check input[type=checkbox]:disabled + label {
+  background-color: #a756e9;
+  color: $color-white;
+}

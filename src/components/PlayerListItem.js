@@ -1,17 +1,11 @@
 import React from 'react'
 import moment from 'moment';
+import ProfilePhoto from './ui/ProfilePhoto';
 
-export default function PlayerListItem(props) {
-
-  const player = props.player;
-
+export default function PlayerListItem({ player }) {
   return (
     <div className="player">
-      <div className="player__photo">
-        <div className="player__photo-container">
-          <img src={player.photoURL} />
-        </div>
-      </div>
+      <ProfilePhoto imageUrl={player.photoURL} size="4rem" isRound={true} />
       <div className="player__details">
         <div className="player__name">{player.displayName}</div>
         <div className="player__status">

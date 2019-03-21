@@ -4,9 +4,8 @@ $color-primary-font: white;
 $color-secondary: #37668A;
 $color-secondary-font: #3275a7;
 $color-font-light: #a1a1a1;
-$color-font: #3b3b3b;
 $color-black: #000313;
-$color-white: #f8f8f8;
+$color-white: #f7f7f7;
 $color-idea: #D4D656;
 $color-important: #963F3C;
 $color-default: $color-primary;
@@ -14,6 +13,9 @@ $color-question: #565723;
 $color-todo: $color-secondary-font;
 $color-online: #d0ff8a;
 $color-offline: #ffe28a;
+
+$color-body: #f8f8f8;
+$color-font: #3b3b3b;
 
 // Font
 $font-logo: 'Oleo Script', cursive;
@@ -25,7 +27,7 @@ $font-size-small: 1.4rem;
 // Spacing
 $s-size: 1.2rem;
 $m-size: 2.4rem;
-$l-size: 3.6rem;
+$l-size: 3.2rem;
 $xl-size: 4.2rem;
 $desktop: 45rem;
 $touch-size: 5rem;

@@ -1,0 +1,45 @@
+.button {
+  display: inline-block;
+  width: 100%;
+  cursor: pointer;
+  line-height: $touch-size;
+  text-decoration: none;
+  text-align: center;
+}
+
+.button--dark {
+  background-color: transparent;
+  border: 2px solid $color-white;
+  color: $color-white;
+  transition: all .3s ease;
+
+  &:hover {
+    background-color: $color-white;
+    color: $color-primary;
+  }
+}
+
+.button--primary {
+  background-color: $color-secondary;
+  border: 1px solid $color-primary;
+  font-family: $font-logo;
+  font-size: $l-size;
+  font-weight: 300;
+  color: $color-white;
+  transition: all .3s ease;
+  border-radius: $rounded;
+
+  &:hover {
+    background-color: $color-white;
+    color: $color-primary;
+  }
+}
+
+.button--secondary {
+  background-color: transparent;
+  border: none;
+  font-size: $m-size;
+  font-weight: 300;
+  color: $color-white;
+  transition: all .3s ease;
+}

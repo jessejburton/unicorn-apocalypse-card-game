@@ -7,7 +7,7 @@ html {
 }
 
 body {
-  background-color: $color-white;
+  background-color: $color-body;
   color: $color-font;
   font-family: $font-body;
   font-size: $m-size;
@@ -17,36 +17,10 @@ body {
 
 button {
   cursor: pointer;
+  outline: none;
 
   &:disabled {
     cursor: default;
   }
 }
 
-.is-active {
-  font-weight: bold;
-}
-
-.logo-font {
-  font-family: $font-logo;
-}
-
-.authenticated {
-  background: url(../images/bg.jpg);
-  background-size: cover;
-  background-position: center center;
-  min-height: 100vh;
-  width: 100vw;
-}
-
-.unauthenticated {
-  background-color: $color-primary;
-  color: $color-white;
-  min-height: 100vh;
-  width: 100vw;
-}
-
-.heading {
-  color: $color-white;
-  text-shadow: 3px 3px 3px rgba(0,0,0,.5);
-}

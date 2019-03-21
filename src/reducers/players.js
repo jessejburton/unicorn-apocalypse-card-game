@@ -1,8 +1,9 @@
 
 export default (state = {}, action) => {
   switch (action.type) {
-    case 'SET_PLAYERS':
+    case 'SET_PLAYERS': {
       return action.players;
+    }
     default:
       return state;
   }

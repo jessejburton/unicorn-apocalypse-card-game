@@ -1,15 +1,10 @@
 .player {
-  background-color: darken($color-white, 3%);
-  border: 1px solid darken($color-white, 15%);
-  border-radius: $rounded;
   padding: .3rem;
   width: 100%;
   display: grid;
   grid-template-columns: 6rem auto;
   position: relative;
   margin-bottom: .3rem;
-  box-shadow: inset -2px -2px 2px rgba(darken($color-white, 20%),.4);
-
 }
 
 .player__photo {
@@ -21,7 +16,6 @@
   width: $touch-size;
   height: $touch-size;
   overflow: hidden;
-  border-radius: $rounded;
 
   img {
     width: 100%;

@@ -1,15 +1,27 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import { Provider } from 'react-redux';
-import AppRouter, { history } from './routers/AppRouter';
-import configureStore from './store/configureStore';
-import { login, logout } from './actions/auth';
-import { startAddPlayer, startSetPlayers } from './actions/players';
+
+// Database
+import { firebase } from './firebase/firebase';
+
+// Styles
 import 'normalize.css/normalize.css';
 import './styles/styles.scss';
-import 'react-dates/lib/css/_datepicker.css';
-import { firebase } from './firebase/firebase';
-import LoadingPage from './components/LoadingPage';
+
+// Routing
+import AppRouter, { history } from './routers/AppRouter';
+
+// Store
+import { Provider } from 'react-redux';
+import configureStore from './store/configureStore';
+
+// Actions
+import { login, logout } from './actions/auth';
+import { startAddPlayer, startSetPlayers } from './actions/players';
+import { startSetGames } from './actions/games';
+
+// Pages
+import LoadingPage from './components/pages/LoadingPage';
 
 const store = configureStore();
 const jsx = (
@@ -30,15 +42,24 @@ ReactDOM.render(<LoadingPage />, document.getElementById('app'));
 
 firebase.auth().onAuthStateChanged((user) => {
   if (user) {
-    // Log the user in
-    store.dispatch(login({ uid: user.uid, user: user.providerData[0] }));
-    // Add the user to the database
-    store.dispatch(startAddPlayer({ ...user.providerData[0] }));
+    // Destructure the User
+    const {
+      uid,
+      displayName = '',
+      email = '',
+      photoURL = ''
+    } = user;
 
-    store.dispatch(startSetPlayers()).then(() => {
+    // Log the user in and get the necessary data
+    Promise.all([
+      store.dispatch(login({ uid, displayName, email, photoURL })),
+      store.dispatch(startAddPlayer({ uid, displayName, email, photoURL })),
+      store.dispatch(startSetPlayers()),
+      store.dispatch(startSetGames())
+    ]).then(() => {
       renderApp();
       if (history.location.pathname === '/') {
-        history.push('/dashboard');
+        history.push('/menu');
       }
     });
 

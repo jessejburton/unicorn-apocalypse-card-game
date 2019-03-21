@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';
-import { startLogout } from '../actions/auth';
+import { startLogout } from '../../actions/auth';
 
 export const Header = (props) => {
 
@@ -12,7 +12,7 @@ export const Header = (props) => {
       <div className="content-container">
         <div className="header__content">
           <div className="header__logo">
-            <h1 className="header__logo-text">Unicorn Apocalypse</h1>
+            <Link to="/menu"><h1 className="header__logo-text">Unicorn Apocalypse</h1></Link>
           </div>
         </div>
       </div>
